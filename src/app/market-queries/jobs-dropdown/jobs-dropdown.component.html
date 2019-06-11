@@ -1,0 +1,23 @@
+ <div class="combo-container">
+     <igx-input-group #inputGroup (click)="toggleContent()" [ngClass]="{'z-depth-1':focus  }" type="search"
+         class="combo-input-group" [displayDensity]="'compact'">
+
+         <input [disabled]="isDisabled" #input class="input" type="text" igxInput [igxDropDownItemNavigation]="dropDown"
+             readonly="true" placeholder="{{placeholder}}" [value]="dropDown.selectedItem?.value.value"
+             (keydown.ArrowDown)="openDropDown()" (blur)="focus=false" (focus)="focus=true" />
+
+         <igx-suffix igxButton="icon" class="dropdownToggleButton" igxRipple>
+             <igx-icon [isActive]="!isDisabled" class="red">arrow_drop{{
+                dropDown.collapsed ? '_down' : '_up' }}</igx-icon>
+         </igx-suffix>
+
+     </igx-input-group>
+
+     <igx-drop-down class="dropdown-list" #dropDown igxToggle (onSelection)="change($event)" >
+        <div (click)="createNew()" *ngIf="withCreateNew" class="createNewHeader">Create New {{title}}</div>       
+        <igx-drop-down-item  *ngFor="let item of list;index as i; even as isEven; odd as isOdd"
+         [index]="i" [value]="item"  [ngClass]="{'odd-item': isOdd,'even-item': isEven ,'aon-drop-down-item':true  }">
+            {{ item.value }}
+             </igx-drop-down-item>
+     </igx-drop-down>
+ </div>

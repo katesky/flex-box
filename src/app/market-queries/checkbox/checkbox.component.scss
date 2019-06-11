@@ -1,0 +1,32 @@
+@import "~igniteui-angular/lib/core/styles/themes/index";
+@include igx-core(); 
+
+.host {
+  flex-flow: column nowrap;
+  display: flex;
+  padding: 16px;
+}
+
+igx-checkbox + igx-checkbox {
+  margin-top: 16px;
+}
+$my-checkbox-theme: igx-checkbox-theme(
+   /*  */$tick-color:#4bbbec,
+   $fill-color: white,
+   $empty-color : #4bbbec);
+ // Pass the theme to the igx-checkbox component mixin
+ @include igx-checkbox($my-checkbox-theme);
+/*  */
+
+.aon-checkbox{
+  color:#4bbbec;
+
+  cursor: pointer;
+}
+.aon-checkboxes-group{
+  display: flex;
+  align-items: center;
+}
+.aon-checkbox-label{
+   cursor: pointer;
+}

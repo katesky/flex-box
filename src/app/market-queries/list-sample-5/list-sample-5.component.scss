@@ -1,0 +1,141 @@
+@import "~igniteui-angular/lib/core/styles/themes/index";
+@include igx-core();
+
+/* autoprefixer grid: on */
+
+@-webkit-keyframes color-change-2x {
+  0% {
+    background: #fdf8f0;
+  }
+  100% {
+    background: #f6e7ec;
+  }
+}
+
+@keyframes color-change-2x {
+  0% {
+    background: #fdf8f0;
+  }
+  100% {
+    background: #f6e7ec;
+  }
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@include igx-theme($default-palette);
+.red-active {
+  $my-list-theme: igx-list-theme(
+    $item-background-active: red !important,
+    $header-background: #4bbbec,
+    $header-text-color: white
+  );
+  @include igx-list($my-list-theme);
+}
+.odd {
+  $my-list-theme2: igx-list-theme(
+    $item-background: rgba(242, 242, 242, 1)
+  );
+  @include igx-list($my-list-theme2);
+}
+.even {
+  $my-list-theme3: igx-list-theme(
+    $item-background: white
+  );
+  @include igx-list($my-list-theme3);
+}
+
+:host {
+  display: block;
+  //padding: 10px;
+}
+
+.search {
+  margin-bottom: 2px;
+  min-width: 460px;
+}
+
+igx-icon {
+  cursor: pointer;
+}
+
+.red {
+  color: red;
+}
+
+.list-sample {
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  z-index: 99 !important;
+  position: absolute;
+  max-width: 790px;
+  overflow: auto;
+  width: 100%;
+  font-size: 0.8em;
+  max-height: 350px;
+}
+
+.contact_info {
+  align-content: stretch;
+  display: flex;
+}
+.info {
+  flex-grow: 1;
+  &__icon {
+    font-size: 1.2em;
+  }
+}
+.zero-width {
+  flex-grow: 0;
+}
+.two-width {
+  flex-grow: 2;
+}
+.four-width {
+  flex-grow: 4;
+}
+.density-chooser {
+  margin-bottom: 16px;
+}
+
+.list-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-page-header {
+  flex: 0 0 auto;
+  background-color: #dcdcdc;
+}
+
+.list-page-content {
+  flex: 1 1 auto;
+  position: relative; /* need this to position inner content */
+  overflow-y: auto;
+}
+
+.list-page-footer {
+  flex: 0 0 auto;
+  background-color: #dcdcdc;
+}
+.list-container-search-content {
+  margin-bottom: 2px;
+  margin:auto;
+}

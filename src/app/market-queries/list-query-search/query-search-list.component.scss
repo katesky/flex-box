@@ -1,0 +1,86 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+@include igx-core();
+:host {
+  display: block;
+  //padding: 10px;
+}
+
+.list-container-search-content {
+  margin-bottom: 2px;
+  margin: auto;
+  cursor: pointer;
+}
+
+.list-sample {
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  z-index: 99 !important;
+  position: absolute;
+  min-width: 780px;
+  overflow: auto;
+  width: 100%;
+  font-size: 0.8em;
+  max-height: 350px;
+  margin-top: 2px;
+}
+
+.density-chooser {
+  margin-bottom: 16px;
+}
+
+.list-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-page-header {
+  flex: 0 0 auto;
+  background-color: #dcdcdc;
+  cursor: pointer;
+}
+
+.list-page-content {
+  flex: 1 1 auto;
+  position: relative; /* need this to position inner content */
+  overflow-y: auto;
+}
+
+.info {
+  align-content: stretch;
+  display: flex;
+}
+.info-item {
+  flex-grow: 1;
+  &__icon {
+    font-size: 1.2em;
+    text-align: left;
+  }
+}
+
+.items-list {
+  display: flex;
+}
+.items{
+  cursor: pointer;
+}
+.item {
+  text-align: left;
+  flex: 1;
+  flex-shrink: 0;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+}
+.grow-3{
+  flex-grow:3;
+}
+.grow-0{
+  flex-grow:0;
+}
+.text-right{
+  text-align: right;
+}
+.list-page-footer {
+  flex: 0 0 auto;
+  background-color: #dcdcdc;
+}
+

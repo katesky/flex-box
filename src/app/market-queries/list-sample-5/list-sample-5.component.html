@@ -1,0 +1,70 @@
+<!-- <div class="density-chooser">
+    <igx-buttongroup [values]="displayDensities" (onSelect)="selectDensity($event)"></igx-buttongroup>
+</div> -->
+<div class="list-container">
+    <div class="list-container-search">
+        <igx-input-group type="search" class="list-container-search-content"  [ngClass]="{'z-depth-1':focus  }"  [displayDensity]="'compact'" >
+            <input [disabled]="isDisabled" (click)="showList=true" #search 
+                igxInput
+                placeholder="Type to Search" [(ngModel)]="searchContact"
+                (keydown.ArrowDown)="openDropDown()"
+                (blur)="focus=false" (focus)="focus=true">
+            <igx-prefix>
+                <igx-icon>search</igx-icon>
+            </igx-prefix>
+
+            <igx-suffix *ngIf="search.value.length> 0" (click)="searchContact =
+                null">
+                <igx-icon>clear</igx-icon>
+            </igx-suffix>
+
+
+        </igx-input-group>
+
+        <div class="list-sample list-page" *ngIf="showList">
+            <igx-list #list class="list1" [displayDensity]="density" >
+                    <ng-template igxEmptyList>
+                            <p class="loading">Patience, we are currently loading your data...</p>
+                          </ng-template>
+                <div class="list-page-content red-active">
+                    <igx-list-item class="item" [ngClass]="{'odd': isOdd ,
+                        'even':
+                        isEven }" #item
+                        *ngFor="let survey of list | igxFilter:
+                        filterContacts;index
+                        as i; even as isEven; odd as isOdd">
+                        <div class="item-container1" (mouseover)="isActive=true" (mouseout)="isActive=false">
+
+                            <div class="contact1">
+                                <!-- <igx-avatar [src]="contact.photo" roundShape="true"></igx-avatar> -->
+                                <div class="contact_info">
+                                    <span class="info zero-width">
+                                        <igx-icon class="icon" color="red">delete</igx-icon>
+                                    </span>
+                                    <span class="info zero-width"><a href="#">{{
+                                            survey.surveyCode }}</a> </span>
+                                    <span class="info four-width">{{
+                                        survey.queryName }}</span>
+                                    <span class="info">{{ survey.modifiedOnLocal
+                                        }}</span>
+                                    <span>
+                                        <igx-icon class="info"
+                                            [color]="survey.isSystemQuery ?
+                                            'orange'
+                                            : 'lightgray'"
+                                            (click)="toggleFavorite(survey)">
+                                            star</igx-icon>
+                                    </span>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </igx-list-item>
+                </div>
+
+            </igx-list>
+        </div>
+    </div>
+</div>

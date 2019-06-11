@@ -1,0 +1,23 @@
+<div *ngFor="let task of tasks; index as i" class="aon-checkboxes-group" (click)="task.done= !task.done">
+    <igx-suffix igxButton="icon" class="dropdownToggleButton" igxRipple>
+        <igx-icon class="aon-checkbox">{{ task.done ? 'done' : 'crop_din' }}</igx-icon>
+    </igx-suffix>
+    <span class="aon-checkbox-label"> {{ task.description }} </span>
+
+
+
+
+</div>
+<div *ngFor="let task of tasks; index as i">
+
+    <div class="md-checkbox">
+        <input id="{{i}}" type="checkbox" [checked]="task.done">
+        <label for="{{i}}"> {{ task.description }}</label>
+    </div>
+
+
+</div>
+
+<div style="height: 400px">
+
+</div>

@@ -1,0 +1,53 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+@include igx-core();
+@include igx-theme($default-palette);
+html{
+  overflow: hidden;
+}
+.red-active-list {
+  $my-list-theme: igx-list-theme($item-background-active: #e11b22  !important,
+      $header-background: #4bbbec !important,
+      $header-text-color: white !important,
+      $item-text-color-active: white !important,
+    );
+  @include igx-list($my-list-theme);
+}
+
+.red-hover-list {
+  $my-list-theme: igx-list-theme($item-background: #e11b22 !important,
+      $item-text-color: white !important,
+      $header-background: #4bbbec !important,
+      $header-text-color: white !important,
+    );
+  @include igx-list($my-list-theme);
+}
+
+.odd {
+  $my-list-theme2: igx-list-theme($item-background: rgba(242, 242, 242, 1));
+  @include igx-list($my-list-theme2);
+}
+
+.even {
+  $my-list-theme3: igx-list-theme($item-background: white);
+  @include igx-list($my-list-theme3);
+}
+
+.red-active-item {
+  $my-list-theme3: igx-list-theme($item-background: #e11b22);
+  @include igx-list($my-list-theme3);
+}
+.z-depth-1 {
+  box-shadow: 0 0 5px 0 rgba(255, 27, 34, 0.5)
+}
+
+igx-icon {
+  cursor: pointer;
+}
+
+.red {
+  color: #e11b22 !important;
+}
+
+.white {
+  color: white !important;
+}

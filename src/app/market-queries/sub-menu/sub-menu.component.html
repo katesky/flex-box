@@ -1,0 +1,11 @@
+<div class="k-tab-menu-radford">
+    <div class="tabs">
+        <a *ngFor="let item of list ; index
+    as i; even as isEven; odd as isOdd" href="{{item.link}}">
+            <div class="tab" [ngClass]="{'tab-active': item.active  }">
+                {{item.text}}
+            </div>
+
+        </a>
+    </div>
+</div>

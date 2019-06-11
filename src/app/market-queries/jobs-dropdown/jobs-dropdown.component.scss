@@ -1,0 +1,47 @@
+@import "~igniteui-angular/lib/core/styles/themes/index";
+@include igx-core();
+
+.dropdown-list {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.odd-item {
+  $aon-drop-down-theme-odd: igx-drop-down-theme(
+      $background-color: rgba(242, 242, 242, 1) !important,
+      $hover-item-text-color: white !important,
+      $item-text-color:  black!important, 
+      $hover-item-background:#b33b3f !important,
+      $selected-item-background: #e11b22 !important,
+      $selected-item-text-color: white !important,
+      $selected-hover-item-background: #b33b3f !important,
+      $selected-hover-item-text-color: white !important,
+      $focused-item-background: #b33b3f !important,
+      $focused-item-text-color: white !important,
+      $selected-focus-item-background: #b33b3f !important,
+      $selected-focus-item-text-color: white !important, );
+  @include igx-drop-down($aon-drop-down-theme-odd);
+}
+
+.even-item {
+  $aon-drop-down-theme-even: igx-drop-down-theme(
+      $background-color: white !important,
+      $item-text-color:  black!important, 
+      $hover-item-text-color: white !important,
+      $hover-item-background:#b33b3f !important,
+      $selected-item-background: #e11b22 !important,
+      $selected-item-text-color: white !important,
+      $selected-hover-item-background: #b33b3f !important,
+      $selected-hover-item-text-color: white !important,
+      $focused-item-background: #b33b3f !important,
+      $focused-item-text-color: white !important,
+      $selected-focus-item-background: #b33b3f !important,
+      $selected-focus-item-text-color: white !important, );
+  @include igx-drop-down($aon-drop-down-theme-even);
+}
+.createNewHeader{
+  background-color:  #4bbbec;
+  color: white;
+  padding: 9px;
+  cursor: pointer;
+}

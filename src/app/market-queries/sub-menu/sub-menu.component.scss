@@ -1,0 +1,52 @@
+ 
+.k-tab-menu-radford {
+    margin-bottom: 10px;
+    margin-top: 20px;
+    display: flex;
+    border-bottom: 1px solid #E3E3E3; 
+  }
+  .k-tab-menu-radford  .tabs{
+    flex-direction: row nowrap;
+    cursor: pointer;
+  }
+  
+  .k-tab-menu-radford .tab {
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    min-width: 125px;
+    padding: 7px;
+    margin-right: 2px;
+    background-color: #f8f8f8;
+    color: #555555;
+    height: 33px;
+    flex: 1;
+    flex-shrink: 0;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  
+  .k-tab-menu-radford .tab:hover {
+    cursor: pointer;
+    background-color: #e4e4e4;
+    margin-top: -2px;
+    height: 35px;
+  }
+  
+  @media screen and (max-width: 500px) {
+    .m-tab-menu-radford .tabs {
+      flex-direction: column;
+      align-items: inherit;
+    }
+  }
+  
+  .k-tab-menu-radford .tab-active {
+    background-color: #e4e4e4;
+    margin-top: -2px;
+    height: 35px;
+  }
