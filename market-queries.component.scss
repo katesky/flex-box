@@ -135,6 +135,7 @@ $aon-color-palette: igx-palette($primary: $primary-color,
   justify-content: flex-end;
   align-items: flex-end; */
   display: flex;
+  flex-flow: wrap;
   //margin-top: 10px;
   margin-bottom: 15px;
   //margin-right: 5px;
@@ -168,14 +169,22 @@ $aon-color-palette: igx-palette($primary: $primary-color,
 
 }
 
+@media screen and (max-width: 998px) {
+  .market-query-toolbox-col:nth-child(n+3) .aon-col{
+    padding-right: 0;
+  }
+}
+.market-query-toolbox-col:last-child .aon-col{
+  padding-right: 0;
+}
+
+
 .aon-col {
   min-width: 15em;
   flex: 1 1 auto;
   padding-right: 5px;
 }
-.market-query-toolbox-col:last-child .aon-col{
-   padding-right: 0;
- }
+
 .col2 {
   display: flex;
   flex-grow: 1;
