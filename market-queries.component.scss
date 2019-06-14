@@ -3,7 +3,7 @@
 /* @import "~@progress/kendo-theme-bootstrap/scss/all";
 @import "~bootstrap/scss/bootstrap"; */
 
-/*Kate Sky autoprefixer grid: on */
+/* autoprefixer grid: on */
 
 @-webkit-keyframes color-change-2x {
   0% {
@@ -135,6 +135,7 @@ $aon-color-palette: igx-palette($primary: $primary-color,
   justify-content: flex-end;
   align-items: flex-end; */
   display: flex;
+  flex-flow: wrap;
   //margin-top: 10px;
   margin-bottom: 15px;
   //margin-right: 5px;
@@ -151,19 +152,32 @@ $aon-color-palette: igx-palette($primary: $primary-color,
   flex-flow: row nowrap;
   justify-content: flex-end;
   align-items: flex-end;
+  
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 756px) {
   .market-query-toolbox {
     flex-direction: column;
     flex: 2;
   }
-
+  .aon-col{
+    padding-right: 0 !important;
+  }
   .market-query-toolbox-col {
     margin: 3px;
   }
 
 }
+
+@media screen and (max-width: 998px) {
+  .market-query-toolbox-col:nth-child(n+3) .aon-col{
+    padding-right: 0;
+  }
+}
+.market-query-toolbox-col:last-child .aon-col{
+  padding-right: 0;
+}
+
 
 .aon-col {
   min-width: 15em;
