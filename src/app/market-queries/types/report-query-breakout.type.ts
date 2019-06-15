@@ -21,4 +21,4 @@ export interface ReportQueryDetails {
 
     name: string;
     filterName: string;
-}
+} 

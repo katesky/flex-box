@@ -1,0 +1,22 @@
+<igx-input-group #inputGroup (click)="collapsed= !collapsed" [ngClass]="{'z-depth-1':focus  }" type="search"
+class="combo-input-group" [displayDensity]="'compact'">
+
+<input [disabled]="isDisabled" #input class="input" type="text" igxInput 
+    readonly="true" placeholder="{{placeholder}}" [value]=""
+    (keydown.ArrowDown)="openDropDown()" (blur)="focus=false" (focus)="focus=true" />
+
+<igx-suffix igxButton="icon" class="dropdownToggleButton" igxRipple (click)="collapsed= !collapsed">
+    <igx-icon  [isActive]="!isDisabled" class="red">arrow_drop{{
+       collapsed ? '_down' : '_up' }}</igx-icon>
+</igx-suffix>
+
+</igx-input-group>
+<div class="grid__wrapper aon-tree-grid" *ngIf="collapsed">
+    <igx-tree-grid #treeGrid [data]="data" [allowFiltering]="true" [paging]="true"
+        primaryKey="ID" foreignKey="ParentID" width="50%" height="400px"
+        [rowSelectable]="true">
+        <igx-column field="Name" dataType="string" [sortable]="true" [editable]="false" [movable]="false" [resizable]="true" ></igx-column>
+      <!--   <igx-column field="JobTitle" dataType="string" [sortable]="true" [editable]="true" [movable]="true" [resizable]="true" ></igx-column>
+        <igx-column field="Age" dataType="number" [sortable]="true" [editable]="true" [movable]="true" [resizable]="true" ></igx-column>
+ -->    </igx-tree-grid>
+</div>

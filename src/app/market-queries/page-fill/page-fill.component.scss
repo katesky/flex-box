@@ -1,0 +1,34 @@
+:host {
+  display: flex;
+}
+
+.aon-result-mask-on {
+  background-color: #e8e8e8;
+  min-height: 500px;
+  //width: 1170px;
+  flex-grow: 1;
+  background-image: "./assets/Radford/img/icons/back_datagen_mask.jpg";
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.aon-mask {
+  float: right;
+ // width: 100%;
+ // height: 100%;
+}
+
+.aon-message {
+  font-size: 17px;
+  line-height: 1.5;
+  position: absolute;
+  margin-top: 22%;
+  margin-left: 5%;
+  display: block;
+}
+
+.aon-highlight {
+  color: red;
+  font-weight: bold;
+}

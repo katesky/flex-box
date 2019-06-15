@@ -1,0 +1,8 @@
+<igx-input-group #inputGroup [ngClass]="{'z-depth-1':focus  }" type="search" [displayDensity]="'compact'">
+
+  <input [disabled]="isDisabled" [readOnly]="false" #input class="input" type="text" igxInput readonly="true" placeholder="{{placeholder}}"
+    [value]="value" (blur)="focus=false" (focus)="focus=true" />
+
+
+
+</igx-input-group>

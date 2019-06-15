@@ -1,0 +1,79 @@
+<!-- <div class="density-chooser">
+    <igx-buttongroup [values]="displayDensities" (onSelect)="selectDensity($event)"></igx-buttongroup>
+</div> -->
+<div class="list-container">
+  <div class="list-container-search">
+    <igx-input-group type="search" class="list-container-search-content" [displayDensity]="'compact'"
+      [ngClass]="{'z-depth-1':focus || showList }">
+      <igx-prefix>
+        <igx-icon>search</igx-icon>
+      </igx-prefix>
+      <input (click)="showList=!showList" #search igxInput (blur)="focus=false" (focus)="focus=true"
+        placeholder="Search Saved Queries" [(ngModel)]="searchContact" (keydown.ArrowDown)="openDropDown()">
+      <igx-suffix igxButton="icon" class="dropdownToggleButton" igxRipple (click)="showList= !showList">
+        <igx-icon class="red">arrow_drop{{ showList ? '_up' : '_down' }}</igx-icon>
+      </igx-suffix>
+
+      <igx-suffix *ngIf="search.value.length> 0" (click)="searchContact =
+                null">
+        <igx-icon>clear</igx-icon>
+      </igx-suffix>
+
+
+    </igx-input-group>
+  </div>
+
+  <div class="list-sample list-page" *ngIf="showList">
+    <igx-list [allowLeftPanning]="true" [allowRightPanning]="true" (onLeftPan)="delete($event)"
+      (onRightPan)="edit($event)" class="list1" [displayDensity]="density" (onItemClicked)="editEvent($event)">
+      <ng-template igxListItemLeftPanning>
+        <div class="listItemLeftPanningStyle">
+          <igx-icon [color]="white" style="margin-left:10px">delete</igx-icon>Delete
+        </div>
+      </ng-template>
+      <ng-template igxListItemRightPanning>
+        <div class="listItemRightPanningStyle">
+          <igx-icon [color]="white" style="margin-right:10px">edit</igx-icon>Edit
+        </div>
+      </ng-template>
+      <ng-template *ngIf=isLoading>
+        <p class="loading">Patience, we are currently loading your data...</p>
+      </ng-template>
+      <ng-template igxEmptyList>
+        <p>No Queries</p>
+      </ng-template>
+      <div class="list-page-header red-active-list">
+        <igx-list-item style="padding: 10px !important;" isHeader="true" (click)="create()">
+          Create New Query
+        </igx-list-item>
+      </div>
+
+      <div class="list-page-content">
+        <igx-list-item class="items red-active-list" [ngClass]="{'odd': isOdd , 'even':
+                    isEven , 'red-hover-list': query.hover}" #item *ngFor="let query of list | igxFilter: filterContacts;index
+                    as i; even as isEven; odd as isOdd" (mouseover)="query.hover=true" (mouseout)="query.hover=false" >
+          <div class="items-list">
+            <div class="info">
+
+              <span class="item info-item grow-3">
+                {{query.queryName }}
+              </span>
+
+              <span class="item info-item ">
+                {{query.surveyCode }}</span>
+              <span class="item info-item">
+                {{query.modifiedOnLocal}}
+              </span>
+              <span class="item info-item text-right">
+                <button igxButton="icon" igxRipple igxButtonColor="" igxRippleCentered="true" (click)="deleteEvent(i)">
+                  <igx-icon [ngClass]="{'white':query.hover, 'red':!query.hover }" class="icon">highlight_off
+                  </igx-icon>
+                </button> </span>
+            </div>
+          </div>
+        </igx-list-item>
+      </div>
+
+    </igx-list>
+  </div>
+</div>

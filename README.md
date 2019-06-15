@@ -1,13 +1,6 @@
-# CdnAngular
+# AonCdnAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
-step 1
-open terminal with: ctrl+~
-type: npm i
-step 2
-ng s
-step 3 
-goto: http://localhost:4200/market-queries
 
 ## Development server
 

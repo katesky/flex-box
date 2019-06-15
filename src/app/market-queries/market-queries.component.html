@@ -5,14 +5,15 @@
   <div id="Loading" *ngIf="showLoading" class="loading-mask ng-isolate-scope
   is-active loading"></div>
   <div *ngIf="config.intValue==1" class="toolbox-header">
- <!--    <div class="display-flex">
+    <div class="display-flex">
       <aon-sub-menu></aon-sub-menu>
-    </div> -->
+    </div>
     <div class="market-query-toolbox">
       <!-- <aon-pin-float [floatClass]="'market-query-toolbox'"> </aon-pin-float> -->
       <div class="market-query-toolbox-col">
-        <aon-query-search-list class="aon-col" [list]="reportQuery" [focus]="step==0" (createQuery)="createQuery();step=1;"
-          (selectQuery)="selectQuery($event);step=1;" (deleteQuery)="deleteQuery($event);step=1;">
+        <aon-query-search-list class="aon-col" [list]="reportQuery" [focus]="step==0"
+          (createQuery)="createQuery();step=1;" (selectQuery)="selectQuery($event);step=1;"
+          (deleteQuery)="deleteQuery($event);step=1;">
         </aon-query-search-list>
       </div>
 
@@ -31,8 +32,8 @@
           (selectedItemChanged)="selecteJobChanged($event)">
         </aon-jobs-dropdown>
         <aon-jobs-dropdown [title]="'Job List'" (createNewItem)="createNewDataElement()" [withCreateNew]="true"
-          [focus]="step==2" *ngIf="jobIndex>1" class="aon-col 2" [list]="dataElements" [isDisabled]="isJobSearchDisabled"
-          (selectedItemChanged)="selectDataElement($event)">
+          [focus]="step==2" *ngIf="jobIndex>1" class="aon-col 2" [list]="dataElements"
+          [isDisabled]="isJobSearchDisabled" (selectedItemChanged)="selectDataElement($event)">
         </aon-jobs-dropdown>
 
 
@@ -47,5 +48,14 @@
       </div>
 
     </div>
+
   </div>
+  <aon-page-fill *ngIf="showPageFill">
+
+  </aon-page-fill>
+  <aon-query-detail [query]="currentQuery"  *ngIf="!showPageFill" (editQuery)="editQuery()">
+
+  </aon-query-detail>
 </div>
+
+<igx-toast #toast></igx-toast>

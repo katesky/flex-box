@@ -3,7 +3,7 @@
 /* @import "~@progress/kendo-theme-bootstrap/scss/all";
 @import "~bootstrap/scss/bootstrap"; */
 
-/*Kate Sky autoprefixer grid: on */
+/* autoprefixer grid: on */
 
 @-webkit-keyframes color-change-2x {
   0% {
@@ -57,7 +57,7 @@ $aon-color-palette: igx-palette($primary: $primary-color,
 
 
 
- /*  $body-style: igx-type-style($font-size: rem(12px),
+/*  $body-style: igx-type-style($font-size: rem(12px),
       $font-weight: normal,
       $letter-spacing: rem(.5px),
       $line-height: rem(5px),
@@ -73,26 +73,33 @@ $aon-color-palette: igx-palette($primary: $primary-color,
 
 
 
-  $my-input-group-theme: igx-input-group-theme($border-border-radius: 0px,
-      $box-border-radius: 0px, $search-border-radius: 0px,
-      $palette: $aon-color-palette);
-  // Pass the theme to the igx-input-group component mixin
-  @include igx-input-group($my-input-group-theme);
+$my-input-group-theme: igx-input-group-theme($border-border-radius: 0px,
+  $box-border-radius: 0px, $search-border-radius: 0px,
+  $palette: $aon-color-palette);
+// Pass the theme to the igx-input-group component mixin
+@include igx-input-group($my-input-group-theme);
 
 
 
- //$my-checkbox-theme: igx-checkbox-theme($fill-color: white,$tick-color:#4bbbec);
+//$my-checkbox-theme: igx-checkbox-theme($fill-color: white,$tick-color:#4bbbec);
 
 
 .red-active-list {
-  $my-list-theme: igx-list-theme($item-background-active: #e11b22  !important,
+  $my-list-theme: igx-list-theme($item-background-active: #e11b22 !important,
       $header-background: #4bbbec !important,
       $header-text-color: white !important,
       $item-text-color-active: white !important,
     );
   @include igx-list($my-list-theme);
 }
+.aon-tree-grid{
+  $my-grid-theme:igx-grid-theme($row-selected-background:#e11b22,
+  $row-selected-text-color:white ,
+  $row-hover-background:#e11b22,
+  $row-hover-text-color: white);
+  @include igx-grid($my-grid-theme);
 
+}
 .red-hover-list {
   $my-list-theme: igx-list-theme($item-background: #e11b22 !important,
       $item-text-color: white !important,
@@ -135,6 +142,7 @@ $aon-color-palette: igx-palette($primary: $primary-color,
   justify-content: flex-end;
   align-items: flex-end; */
   display: flex;
+  flex-flow: row wrap;
   //margin-top: 10px;
   margin-bottom: 15px;
   //margin-right: 5px;
@@ -146,17 +154,27 @@ $aon-color-palette: igx-palette($primary: $primary-color,
 .market-query-toolbox-col {
   display: inline-flex;
   flex-grow: 1;
-  margin: auto; flex: 1;
+  margin: auto;
+  flex: 1;
   flex-shrink: 0;
   flex-flow: row nowrap;
   justify-content: flex-end;
   align-items: flex-end;
 }
+@media screen and (max-width: 998px) {
+  .market-query-toolbox-col:nth-child(n+3) .aon-col{
+    padding-right: 0;
+  }
+}
+.market-query-toolbox-col:last-child .aon-col{
+  padding-right: 0;
+}
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 756px) {
   .market-query-toolbox {
     flex-direction: column;
     flex: 2;
+    padding-bottom: 10px;
   }
 
   .market-query-toolbox-col {
@@ -168,7 +186,7 @@ $aon-color-palette: igx-palette($primary: $primary-color,
 .aon-col {
   min-width: 15em;
   flex: 1 1 auto;
-  padding-right: 5px;
+  padding-right: 0px !important;
 }
 
 .col2 {
@@ -225,6 +243,10 @@ igx-icon {
 
 .white {
   color: white !important;
+}
+.blue{
+  color: #4bbbec  !important;
+
 }
 
 .height-33 {
@@ -435,7 +457,7 @@ footer132 {
   height: 100%;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 680px) {
   .buttons {
     flex-direction: column !important;
   }
@@ -476,10 +498,9 @@ footer132 {
   text-shadow: 2px 1px 2px rgba(150, 150, 150, 1);
 }
 
-$aon-drop-down-theme: igx-drop-down-theme(
-  $background-color: white !important,
-  $header-text-color:  black!important ,
-  $item-text-color:  black!important,
+$aon-drop-down-theme: igx-drop-down-theme($background-color: white !important,
+  $header-text-color: black !important,
+  $item-text-color: black !important,
   $hover-item-text-color: white !important,
   $hover-item-background:#e11b22 !important,
   $selected-item-background: #e11b22 !important,

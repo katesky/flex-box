@@ -4,18 +4,24 @@ import { ErrorMessage } from './components/error-message.component';
 import { GroupByPipe } from './pipes/group-by.pipe';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { SearchPipe } from './pipes/search.pipe';
 
 
 @NgModule({
-  imports: [ CommonModule,FormsModule],
+  imports: [
+    CommonModule,
+    FormsModule
+  ],
   declarations: [
     ErrorMessage,
-    GroupByPipe],
+    GroupByPipe
+  ],
+
   providers: [],
   bootstrap: []
 })
 export class SharedModule {
-  constructor(){
+  constructor() {
     console.log("SharedModule loaded")
   }
 }

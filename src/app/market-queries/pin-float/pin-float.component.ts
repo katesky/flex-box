@@ -1,6 +1,5 @@
-import { Observable } from "rxjs";
-import { Component, OnInit, ViewChild, Input, EventEmitter, Output } from "@angular/core";
-import { IgxRadioComponent } from "igniteui-angular";
+import { Component, OnInit, Input, EventEmitter, Output } from "@angular/core";
+import * as $ from  'jquery'
 @Component({
     selector: "aon-pin-float",
     templateUrl: "./pin-float.component.html",
