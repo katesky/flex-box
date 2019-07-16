@@ -22,7 +22,7 @@ export class DropDownComponent implements OnInit {
   @Input() withCreateNew: boolean;
   @Input() title: boolean;
   @Input() isSearchable: boolean;
-
+  searchText ='';
 
   @ViewChild("dropDown", { read: IgxDropDownComponent }) public igxDropDown: IgxDropDownComponent;
   @ViewChild("inputGroup", { read: IgxInputGroupComponent }) public inputGroup: IgxInputGroupComponent;

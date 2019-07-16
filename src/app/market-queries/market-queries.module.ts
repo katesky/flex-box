@@ -6,16 +6,10 @@ import { JobsDropDownComponent } from '../market-queries/jobs-dropdown/jobs-drop
 import { PinFloatComponent } from '../market-queries/pin-float/pin-float.component';
 import { SubMenuComponent } from '../market-queries/sub-menu/sub-menu.component';
 import { ListSample5Component } from '../market-queries/list-sample-5/list-sample-5.component';
-import { QuerySearchListComponent } from './query-search-list/query-search-list.component';
 import { MarketQueriesComponent } from './market-queries.component';
 import { CommonModule } from '@angular/common';
-import { IgniteuiAngularModule } from '../shared/igniteui.angular.module';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { IgxListModule, IgxInputGroupModule, IgxDropDownModule, IgxIconModule, IgxNavbarModule, IgxButtonModule, IgxToggleModule, IgxFilterModule,IgxButtonGroupModule, IgxToastModule, IgxTreeGridModule, IgxDividerModule, IgxCardModule } from 'igniteui-angular';
-import { SharedModule } from '../shared/shared.module';
-import { AppRoutingModule } from '../app-routing.module';
 import { AuthGuardService } from '../core/auth/auth-guard-service';
 import { AuthService } from '../core/auth/auth.service';
 import { AonPageFillComponent } from './page-fill/page-fill.component';
@@ -24,12 +18,12 @@ import { RegionsTreeSelectorComponent } from './regions-tree-selector/regions-tr
 import { TextInputComponent } from './text-input/text-input.component';
 import { CountrySelectorComponent } from './country-selector/country-selector.component';
 import { DropDownComponent } from './dropdown-list/dropdown.component';
-import { environment } from 'src/environments/environment';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { Effects as MarketQueryEffects } from './store-not-used-yet/effects/effects';
 import * as fromMarketQuery from './store-not-used-yet/index';
 import { SearchPipe } from '../shared/pipes/search.pipe';
+import { QuerySearchListComponent } from './list-query-search/query-search-list.component';
 
 
 
@@ -59,7 +53,6 @@ import { SearchPipe } from '../shared/pipes/search.pipe';
   declarations: [
     MarketQueriesComponent,
     SubMenuComponent,
-    QuerySearchListComponent,
     JobsDropDownComponent,
     ListSample5Component,
     CheckboxComponent,
@@ -70,13 +63,9 @@ import { SearchPipe } from '../shared/pipes/search.pipe';
     TextInputComponent,
     CountrySelectorComponent,
     DropDownComponent,
-    SearchPipe
-    /* QuerySearchListComponent,
-    ,
-    CheckboxComponent,
-    PinFloatComponent,
-    SubMenuComponent,
-    ListSample5Component */
+    SearchPipe,
+    QuerySearchListComponent,
+
   ],
   providers: [AuthGuardService, AuthService]
 })

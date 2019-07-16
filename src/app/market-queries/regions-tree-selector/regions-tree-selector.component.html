@@ -1,9 +1,9 @@
 <igx-input-group #inputGroup (click)="collapsed= !collapsed" [ngClass]="{'z-depth-1':focus  }" type="search"
 class="combo-input-group" [displayDensity]="'compact'">
 
-<input [disabled]="isDisabled" #input class="input" type="text" igxInput 
+<input [disabled]="isDisabled" #input class="input" type="text" igxInput
     readonly="true" placeholder="{{placeholder}}" [value]=""
-    (keydown.ArrowDown)="openDropDown()" (blur)="focus=false" (focus)="focus=true" />
+     (blur)="focus=false" (focus)="focus=true" />
 
 <igx-suffix igxButton="icon" class="dropdownToggleButton" igxRipple (click)="collapsed= !collapsed">
     <igx-icon  [isActive]="!isDisabled" class="red">arrow_drop{{

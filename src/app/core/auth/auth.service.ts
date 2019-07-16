@@ -28,9 +28,9 @@ export class AuthService {
     } */
   //  let parentLocationIE = window.location.ancestorOrigins;
     console.log(this.urlService.parent + " (loaded app) " + this.urlService.origin); //make it part of the ngrx ?
- 
 
-    return environment.allowedUrls.indexOf(this.urlService.parent)>0 || !environment.production;
+
+    return true;//environment.allowedUrls.indexOf(this.urlService.parent)>0 || !environment.production;
   }
 }
 //document.location.ancestorOrigins[0]
